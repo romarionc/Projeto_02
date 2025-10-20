@@ -2,7 +2,8 @@ Especificações Técnicas Obrigatórias
 
 •
 Sistema de Design
-Desenvolver design system consistente com variáveis CSS customizadas;
+
+Desenvolver design system consistente com variáveis CSS customizadas; ok 
 
 Definir paleta de cores com no mínimo 8 cores (primárias, secundárias, neutras); ok
 
@@ -12,11 +13,17 @@ Criar sistema de espaçamento modular (8px, 16px, 24px, 32px, 48px, 64px). ok
 
 •
 Leiautes Responsivos com Flexbox e Grid
-Implementar leiaute principal usando CSS grid para estrutura geral;
+
+Implementar leiaute principal usando CSS grid para estrutura geral; ok 
+
 Utilizar flexbox para componentes internos e alinhamentos;
+
 Criar no mínimo 5 breakpoints responsivos bem definidos;
-Desenvolver sistema de grid customizado (12 colunas);
-Implementar leiautes específicos para diferentes tipos de conteúdo.
+
+Desenvolver sistema de grid customizado (12 colunas);  ok
+R: *feito 12 colunas com carrocel ativado na pagina projeto html.
+
+Implementar leiautes específicos para diferentes tipos de conteúdo. ok
 
 •
 Navegação Sofisticada e Interativa
@@ -25,8 +32,9 @@ Implementar navegação mobile com menu hambúrguer.
 
 •
 Componentes de Interface
-Desenvolver sistema de cards responsivos para projetos;
+
+Desenvolver sistema de cards responsivos para projetos; ok 
 Criar botões com estados visuais (hover, focus, active, disabled); ok
-Implementar formulários estilizados com validação visual;
+Implementar formulários estilizados com validação visual; ok 
 Desenvolver componentes de feedback (alerts, toasts, modals);
 Criar sistema de badges e tags para categorização.
