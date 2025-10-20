@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ONG - Comida para todos</title>
+  <link rel="icon" href="assets/icons/logo_32x32.png" type="image/png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/logo_16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/logo_32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/logo_180x180.png">
+  <!-- não utilizar css nesse primeiro momento -->
+  <!-- <link rel="stylesheet" href="css/style_cadastro.css"> -->
+</head>
+
+<body>
+  <!-- parte superior da pagina -->
+  <header>
+    <h1>ONG - Comida para todos</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Página inicial</a></li>
+        <li><a href="projetos.html">Projetos sociais</a></li>
+        <li><a href="cadastro.html">Cadastro</a></li>
+      </ul>
+    </nav>
+  </header>
+  <!-- parte central da pagina -->
+  <main>
+    <section>
+
+      <h2>Junte-se a Nós: Sua Ajuda Alimenta a Esperança!</h2>
+      <p> Na "Comida para Todos", nosso trabalho diário só é possível graças à força e dedicação de pessoas como você. A demanda por alimentos e apoio é constante e, por isso, estamos sempre precisando de novos voluntários para se juntarem à nossa causa e nos ajudarem a continuar nutrindo vidas.</p>
+      <p>Ser voluntário é doar um dos bens mais preciosos que você tem: o seu tempo. É a sua energia que separa os alimentos,atenção que monta as cestas básicas com carinho, e o seu sorriso que acolhe quem busca uma refeição quente em nodistribuições. Cada tarefa, por mais simples que pareça, é uma peça fundamental na nossa missão de combater a fome.</p>
+      <span><strong>Você pode fazer a diferença de várias formas:</strong></span>
+      <ul>
+        <li>Ajudando na organização e triagem de alimentos doados.</li>
+        <li>Montando as cestas básicas para as famílias cadastradas.</li>
+        <li>Participando da logística e distribuição das refeições para a população em situação de rua.</li>
+        <li>Apoiando em eventos de arrecadação e campanhas de conscientização.</li>
+      </ul>
+
+    </section>
+    <!-- atendendo ao requisito formulario, input, validdor e agrupamento logico -->
+    <section>
+      <h3>Formulario para volutarios</h3>
+
+      <form>
+        <fieldset>
+          <legend>Informações Pessoais</legend>
+          <br>
+          <!-- Nome completo -->
+          <label for="nome">Nome Completo:</label>
+          <input type="text" id="nome" name="nome" required="required">
+          <br><br>
+          <!-- email -->
+          <label for="email">E-mail:</label>
+          <input type="email" id="email" name="email" required="required">
+          <br><br>
+          <!-- CPF -->
+          <label for="cpf">CPF:</label>
+          <input type="text" pattern="[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}" placeholder="000.000.000-00" title="Formato: 000.000.000-00" id="cpf" name="cpf">
+          <br><br>
+          <!-- telefone -->
+          <label for="telefone">Telefone:</label>
+          <input type="tel" id="telefone" name="telefone" placeholder="(99) 9999-9999" pattern="(\([0-9]{2}\))\s([9]{1})?([0-9]{4})-([0-9]{4})">
+          <br><br>
+          <!-- nascimento -->
+          <label for="nascimento">Data de Nascimento:</label>
+          <input type="date" id="nascimento" name="nascimento">
+          <!-- Idade -->
+          <label for="idade">Idade:</label>
+          <input type="number" id="idade" name="idade" min="18" max="120">
+          <br><br>
+          <!-- Endereço -->
+          <label for="endereco">Endereço:</label>
+          <input type="text" id="endereco" name="endereco">
+          <!-- CEP -->
+          <label for="cep">CEP:</label>
+          <input type="text" pattern="[0-9]{5}-[0-9]{3}" placeholder="00000-000" title="Formato: 00000-000" id="cep" name="cep">
+          <br><br>
+          <!-- Cidade -->
+          <label for="cidade">Cidade:</label>
+          <input type="text" id="cidade" name="cidade" required>
+          <!-- Estado -->
+          <label for="estado">Estado:</label>
+          <select name="estado" id="estado">
+            <option value=" " selected disabled>selecione uma das opções</option>
+            <option value="AC">AC</option>
+            <option value="AL">AL</option>
+            <option value="AP">AP</option>
+            <option value="AM">AM</option>
+            <option value="BA">BA</option>
+            <option value="CE">CE</option>
+            <option value="DF">DF</option>
+            <option value="ES">ES</option>
+            <option value="GO">GO</option>
+            <option value="MA">MA</option>
+            <option value="MT">MT</option>
+            <option value="MS">MS</option>
+            <option value="MG">MG</option>
+            <option value="PA">PA</option>
+            <option value="PB">PB</option>
+            <option value="PR">PR</option>
+            <option value="PB">PB</option>
+            <option value="PI">PI</option>
+            <option value="RJ">RJ</option>
+            <option value="RN">RN</option>
+            <option value="RS">RS</option>
+            <option value="RO">RO</option>
+            <option value="RR">RR</option>
+            <option value="SC">SC</option>
+            <option value="SP">SP</option>
+            <option value="SE">SE</option>
+            <option value="TO">TO</option>
+          </select>
+          <br><br>
+        </fieldset>
+        <br><br>
+        <button type="submit">Enviar</button>
+      </form>
+      <br>
+      <img src="img/seja_voluntario.jpeg" alt="voluntarios abraçados">
+    </section>
+  </main>
+
+  <footer>
+    <br>
+    <p> &copy; 2025 ONG - Comidas para todos</p>
+    <br>
+  </footer>
+</body>
+
+</html>
