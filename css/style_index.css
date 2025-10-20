@@ -1,0 +1,154 @@
+/* atraves do :root vou atibuir as variveis e seus valores */
+
+:root {
+  /* 8 cores especificas */
+  --cor-primary: #ff7a00; /* para botões e links */
+  --cor-secondary: #005a9c; /* para títulos e destaques */
+  --color-text-primary: #212529; /*  para texto principal */
+  --color-text-secondary: #6c757d; /*  para textos de apoio */
+  --cor-background: #f8f9fa; /* fundo da página */
+  --cor-surface: #ffffff; /* caixas de conteúdo (cards, seções) */
+  --cor-border: #dee2e6; /* bordas e divisórias */
+  --cor-success: #28a745; /* Verde para mensagens de sucesso (ex: cadastro) */
+
+  /* setar minha propria fonte */
+  --font-family-base: "Nunito Sans", system-ui, -apple-system, sans-serif;
+  /* agora os pesos */
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
+  /* altura da linha */
+  --line-height-base: 1.6;
+
+  /* Tamanhos Hierárquicos (Mínimo: 5) */
+  /* 1 rem = 16px */
+  --font-size-h1: 2.5rem; /* 40px  */
+  --font-size-h2: 2rem; /* 32px */
+  --font-size-h3: 1.5rem; /* 24px */
+  --font-size-body: 1.125rem; /* 18px */
+  --font-size-small: 0.875rem; /* 14px */
+
+  /* espaçamento modular */
+  /* 1 rem = 16px */
+  --espaco_modular-xs: 0.5rem; /* 8px */
+  --espaco_modular-s: 1rem; /* 16px */
+  --espaco_modular-m: 1.5rem; /* 24px */
+  --espaco_modular-l: 2rem; /* 32px */
+  --espaco_modular-xl: 3rem; /* 48px */
+  --espaco_modular-xxl: 4rem; /* 64px */
+}
+
+/* resetar os valores basicos do html */
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-base);
+  color: var(--color-text-primary);
+  background-color: var(--cor-background);
+}
+
+/* hirarquia das fontes baser*/
+h1,
+h2,
+h3 {
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-bold);
+  color: var(--cor-secondary);
+  margin-top: var(--espaco_modular-m);
+  margin-bottom: var(--espaco_modular-s);
+}
+
+/* tamanhos */
+
+h1 {
+  font-size: var(--font-size-h1);
+}
+
+h2 {
+  font-size: var(--font-size-h2);
+}
+
+h3 {
+  font-size: var(--font-size-h3);
+}
+
+/* paragrafos */
+p {
+  margin-top: 0;
+  margin-bottom: var(--espaco_modular-s);
+}
+/* estilizando as cores dos links */
+a {
+  color: var(--cor-primary);
+  font-weight: var(--font-weight-bold);
+  text-decoration: none;
+}
+
+/* hover no link das paginas*/
+a:hover {
+  text-decoration: underline;
+}
+/* mudando a cor do strong (negrito)b */
+strong {
+  color: var(--cor-secondary);
+}
+
+/* Aplicando espaçamento no layout principal */
+header,
+main,
+footer {
+  /* Define uma largura máxima e centraliza o conteúdo */
+  /* largura maxima */
+  max-width: 960px;
+  /* esquerda  */
+  margin-left: auto;
+  /* direita */
+  margin-right: auto;
+  /* Espaçamento entre header, main e footer*/
+  padding: var(--espaco_modular-l);
+}
+
+main section {
+  /* Espaçamento entre o main e ao redor e as seções dentro do main */
+  margin-bottom: var(--espaco_modular-xl);
+  padding: var(--espaco_modular-l);
+  background-color: var(--cor-surface);
+  border: 1px solid var(--cor-border);
+  border-radius: var(--espaco_modular-xs);
+}
+
+header {
+  border-bottom: 2px solid var(--cor-primary);
+  padding-bottom: var(--espaco_modular-m);
+}
+
+footer {
+  text-align: center;
+  color: var(--cor-text-secondary);
+  font-size: var(--font-size-small);
+  border-top: 1px solid var(--cor-border);
+  margin-top: var(--espaco_modular-xl);
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex; /* Coloca os itens lado a lado */
+  gap: var(--espaco_modular-m); /* Espaçamento entre os itens do menu */
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  /* arredondamento da borda */
+  border-radius: var(--espaco_modular-xs);
+}
