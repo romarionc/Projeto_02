@@ -65,5 +65,8 @@ CSS3 (Grid, Flexbox, Variáveis Customizadas)
 
 JavaScript (interatividade e validações)
 
+🧾 Autor
 
+Desenvolvido por Romario Costa
+💼 [LinkedIn](https://www.linkedin.com/in/romario-costa-345664207/)
 
