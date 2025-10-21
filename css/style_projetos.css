@@ -147,8 +147,8 @@ footer {
   border-top: 1px solid var(--cor-border);
   margin-top: var(--espaco_modular-xl);
 }
-
-nav ul {
+/* selecionar o ul filho do nav */
+nav > ul {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -252,4 +252,58 @@ img {
 
 #nextBtn {
   right: 10px;
+}
+/* mesmo codigo do css da index */
+/* abaixo estão as configuraçoes do dropdown */
+
+/* aqui vou selecinar o dropdown e colocar ele como container */
+.dropdown {
+  position: relative;
+}
+
+/* manipulando o ul dentro do li .dropdown */
+.submenu {
+  list-style: none;
+  padding: var(--espaco_modular-xs) 0;
+  margin: 0;
+
+  /* Esconde o submenu por padrão */
+  display: none;
+
+  /* Posiciona o submenu absolutamente abaixo do item pai */
+  position: absolute;
+  top: 100%; /* Começa logo abaixo do link pai */
+  left: 0;
+
+  /* Estilização (usando suas variáveis) */
+  background-color: var(--cor-surface);
+  border: 1px solid var(--cor-border);
+  border-radius: var(--espaco_modular-xs);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  min-width: 220px; /* Largura mínima para o dropdown */
+  z-index: 100; /* Garante que fique acima de outros elementos */
+}
+
+/* Mostra o submenu quando o mouse passa por cima do item <li> pai */
+.dropdown:hover .submenu {
+  display: block;
+}
+
+/* Estilo dos links <a> dentro do submenu */
+.submenu li a {
+  display: block;
+  padding: var(--espaco_modular-s) var(--espaco_modular-m);
+
+  /* Sobrescreve os estilos de link padrão para algo mais sutil */
+  color: var(--color-text-primary);
+  font-weight: var(--font-weight-regular);
+  text-decoration: none;
+  white-space: nowrap; /* Impede que o texto quebre em duas linhas */
+}
+
+/* Efeito hover para os links do submenu */
+.submenu li a:hover {
+  background-color: var(--cor-background);
+  color: var(--cor-primary);
+  text-decoration: none;
 }
