@@ -11,15 +11,24 @@
   <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/logo_180x180.png">
   <!-- não utilizar css nesse primeiro momento -->
   <link rel="stylesheet" href="css/style_projetos.css">
+  <!-- css das bags -->
+  <link rel="stylesheet" href="css/feedback-components.css">
 </head>
 
 <body>
+
   <header>
     <h1>ONG - Comida para todos</h1>
-    <nav>
+    <!-- menu hamburguer -->
+    <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="main-nav">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
+
+    <nav id="main-nav">
       <ul>
         <li><a href="index.html">Página inicial</a></li>
-
         <!-- atendendo aos requisitos de dropdown -->
         <li class="dropdown">
           <a href="projetos.html">Projetos sociais</a>
@@ -35,14 +44,25 @@
       </ul>
     </nav>
   </header>
+
   <main>
     <!-- atendendo ao requisito: abordando o volutariado -->
     <section>
       <h2>O que fazemos</h2>
-      <p> <strong> Ação nas Ruas:</strong> Nossas equipes de voluntários percorrem a cidade regularmente para distribuir refeições completas e nutritivas à população em situação de rua. Mais do que apenas alimento, oferecemos uma palavra de conforto, um olhar de acolhimento e a certeza de que eles não foram esquecidos.</p>
-      <p> <strong> Apoio às Famílias:</strong> Através de um sistema de cadastro e parcerias, identificamos famílias em situação de vulnerabilidade e fornecemos cestas básicas com itens essenciais. Com isso, garantimos o alívio imediato da fome e permitimos que essas famílias possam focar em outras necessidades, como saúde, educação e a busca por emprego.</p>
-      <!-- <img src="img/fila-doacao.jpg" alt="moradores de rua recebendo pão"> -->
-
+      <p>
+        <strong> Ação nas Ruas:</strong> Nossas equipes de voluntários percorrem a cidade regularmente para distribuir refeições completas e nutritivas à população em situação de rua. Mais do que apenas alimento, oferecemos uma palavra de conforto, um olhar de acolhimento e a certeza de que eles não foram esquecidos.
+        <br><br>
+        <!-- atendendo ao requisito tags -->
+        <span class="tag tag-primary">Voluntariado</span>
+        <span class="tag">Ação Social</span>
+      </p>
+      <p>
+        <strong> Apoio às Famílias:</strong> Através de um sistema de cadastro e parcerias, identificamos famílias em situação de vulnerabilidade e fornecemos cestas básicas com itens essenciais. Com isso, garantimos o alívio imediato da fome e permitimos que essas famílias possam focar em outras necessidades, como saúde, educação e a busca por emprego.
+        <br><br>
+        <!-- atendendo ao requisito tags -->
+        <span class="tag tag-secondary">Doações</span>
+        <span class="tag tag-success">Cestas Básicas</span>
+      </p>
     </section>
     <section id="carrocel">
       <h3>Nossos Projetos em Ação</h3>
@@ -89,7 +109,7 @@
         <button id="nextBtn" class="nav-btn">›</button>
 
       </div>
-      <script src="assets/js/script.js"></script>
+
     </section>
 
     <!-- atendendo ao requisito: como doar -->
@@ -99,19 +119,22 @@
     </section>
 
     <section>
-      <h5>Como doar!</h4>
-        <p>Banco: Fintech 0taxa</p>
-        <p>Agencia: 0001-1</p>
-        <p>Conta corrente: 12346578-9</p>
-        <p>chave pix: foodforall@foodforall.com </p>
-        <img src="img/pix.png" alt="logo pix">
+      <h5>Como doar!</h5>
+      <p>Banco: Fintech 0taxa</p>
+      <p>Agencia: 0001-1</p>
+      <p>Conta corrente: 12346578-9</p>
+      <p>chave pix: foodforall@foodforall.com </p>
+      <img src="img/pix.png" alt="logo pix">
     </section>
   </main>
+
   <footer>
     <br>
     <p> &copy; 2025 ONG - Comida para todos</p>
     <br>
   </footer>
+  <script src="js/script.js"></script>
+  <script src="js/navigation.js"></script>
 </body>
 
 

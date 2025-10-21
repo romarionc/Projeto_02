@@ -125,3 +125,66 @@
   padding: 1rem 1.5rem;
   border-top: 1px solid var(--cor-border);
 }
+
+/* --- tag e badge --- */
+
+/* .tag para categorizar  */
+.tag {
+  display: inline-block;
+  padding: 0.25rem 0.6rem;
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-bold);
+  line-height: 1.2;
+  border-radius: var(--espaco_modular-xs);
+  background-color: var(--cor-border); /* Cor padrão (cinza) */
+  color: var(--color-text-secondary);
+}
+
+/* Variações de cor para Tags */
+.tag-primary {
+  background-color: var(--cor-primary);
+  color: var(--cor-surface);
+}
+
+.tag-secondary {
+  background-color: var(--cor-secondary);
+  color: var(--cor-surface);
+}
+
+.tag-success {
+  background-color: var(--cor-success);
+  color: var(--cor-surface);
+}
+
+/* --- Estilo Base para Badges (Selos) --- */
+/* Use .badge para status ou contagem (ex: "Novo", "3") */
+.badge {
+  display: inline-block;
+  padding: 0.35em 0.65em;
+  font-size: 0.8em; /* Um pouco menor que o texto ao redor */
+  font-weight: var(--font-weight-bold);
+  line-height: 1;
+  color: var(--cor-surface);
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 10rem; /* Truque para formato de "pílula" */
+  background-color: var(--cor-primary); /* Cor padrão (laranja) */
+}
+
+/* Variações de cor para Badges */
+.badge-secondary {
+  background-color: var(--cor-secondary);
+}
+
+.badge-success {
+  background-color: var(--cor-success);
+}
+
+.badge-danger {
+  background-color: var(--cor-danger); /* Cor de perigo já definida */
+}
+
+.badge-info {
+  background-color: var(--cor-info); /* Cor de info já definida */
+}

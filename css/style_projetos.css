@@ -4,8 +4,8 @@
   /* 8 cores especificas */
   --cor-primary: #ff7a00; /* para botões e links */
   --cor-secondary: #005a9c; /* para títulos e destaques */
-  --color-text-primary: #212529; /*  para texto principal */
-  --color-text-secondary: #6c757d; /*  para textos de apoio */
+  --color-text-primary: #212529; /* para texto principal */
+  --color-text-secondary: #6c757d; /* para textos de apoio */
   --cor-background: #f8f9fa; /* fundo da página */
   --cor-surface: #ffffff; /* caixas de conteúdo (cards, seções) */
   --cor-border: #dee2e6; /* bordas e divisórias */
@@ -37,6 +37,13 @@
   --espaco_modular-l: 2rem; /* 32px */
   --espaco_modular-xl: 3rem; /* 48px */
   --espaco_modular-xxl: 4rem; /* 64px */
+
+  /* --- BREAKPOINTS RESPONSIVOS --- */
+  --bp-xs: 480px; /* Extra pequeno */
+  --bp-sm: 768px; /* Pequeno (Tablet) */
+  --bp-md: 1024px; /* Médio (Laptop) */
+  --bp-lg: 1280px; /* Grande (Monitor) */
+  --bp-xl: 1440px; /* Extra Grande */
 }
 
 /* resetar os valores basicos do html */
@@ -111,19 +118,52 @@ strong {
   color: var(--cor-secondary);
 }
 
-/* Aplicando espaçamento no layout principal */
+/* Aplicando espaçamento no layout principal (Mobile-First) */
 header,
 main,
 footer {
-  /* Define uma largura máxima e centraliza o conteúdo */
-  /* largura maxima */
-  max-width: 960px;
-  /* esquerda  */
+  max-width: none; /* Remove a largura fixa */
+  width: 100%;
   margin-left: auto;
-  /* direita */
   margin-right: auto;
-  /* Espaçamento entre header, main e footer*/
   padding: var(--espaco_modular-l);
+  box-sizing: border-box; /* Garante que o padding não estoure a tela */
+}
+
+/* Pequeno (Tablet) - 768px */
+@media (min-width: var(--bp-sm)) {
+  header,
+  main,
+  footer {
+    max-width: 720px;
+  }
+}
+
+/* Médio (Laptop) - 1024px */
+@media (min-width: var(--bp-md)) {
+  header,
+  main,
+  footer {
+    max-width: 960px; /* Seu container original */
+  }
+}
+
+/* Grande (Monitores) - 1280px */
+@media (min-width: var(--bp-lg)) {
+  header,
+  main,
+  footer {
+    max-width: 1140px;
+  }
+}
+
+/* Extra Grande (Telas amplas) - 1440px+ */
+@media (min-width: var(--bp-xl)) {
+  header,
+  main,
+  footer {
+    max-width: 1320px;
+  }
 }
 
 main section {
@@ -142,19 +182,11 @@ header {
 
 footer {
   text-align: center;
-  color: var(--cor-text-secondary);
+  color: var(--color-text-secondary);
   font-size: var(--font-size-small);
   border-top: 1px solid var(--cor-border);
   margin-top: var(--espaco_modular-xl);
 }
-/* selecionar o ul filho do nav */
-nav > ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex; /* Coloca os itens lado a lado */
-  gap: var(--espaco_modular-m); /* Espaçamento entre os itens do menu */
-}
 
 img {
   max-width: 100%;
@@ -163,17 +195,7 @@ img {
   border-radius: var(--espaco_modular-xs);
 }
 
-/* CARROCEL */
-/* ... (todo o seu CSS anterior permanece igual) ... */
-
-img {
-  max-width: 100%;
-  height: auto;
-  /* arredondamento da borda */
-  border-radius: var(--espaco_modular-xs);
-}
-
-/* carrocel */
+/* --- ESTILOS ESPECÍFICOS DO CARROSSEL --- */
 .carousel-container {
   position: relative;
   width: 100%;
@@ -181,17 +203,14 @@ img {
   margin: var(--espaco_modular-m) auto 0;
   overflow: hidden;
   border-radius: 8px;
-  transform: translateZ(0); /* Mantém a otimização de renderização */
+  transform: translateZ(0);
 }
 
 .carousel-wrapper {
   display: grid;
-  /* Para a transição ficar suave quando o tamanho da tela muda */
   transition: transform 0.5s ease-in-out, grid-template-columns 0.5s ease-in-out;
-  gap: 1rem; /* Usamos um gap consistente */
-
-  /* --- ESTILO PADRÃO (MOBILE FIRST) --- */
-  /* Por padrão, mostra 1 coluna (100% da largura) */
+  gap: 1rem;
+  /* Mobile First: 1 coluna */
   grid-template-columns: repeat(12, 100%);
 }
 
@@ -200,7 +219,7 @@ img {
   border-radius: 5px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  height: 220px; /* Um pouco mais de altura para mobile */
+  height: 220px;
 }
 
 .grid-item img {
@@ -210,10 +229,10 @@ img {
   display: block;
 }
 
-/* --- MEDIA QUERY PARA TABLETS --- */
+/* Media Query para Tablets (Carrossel) */
 @media (min-width: 600px) {
   .carousel-wrapper {
-    /* Mostra 2 colunas */
+    /* 2 colunas */
     grid-template-columns: repeat(12, calc(50% - 0.5rem));
   }
   .grid-item {
@@ -221,15 +240,14 @@ img {
   }
 }
 
-/* --- MEDIA QUERY PARA DESKTOPS --- */
+/* Media Query para Desktops (Carrossel) */
 @media (min-width: 900px) {
   .carousel-wrapper {
-    /* Mostra as 4 colunas originais */
+    /* 4 colunas */
     grid-template-columns: repeat(12, calc(25% - 0.75rem));
   }
 }
 
-/* Os botões continuam iguais */
 .nav-btn {
   position: absolute;
   top: 50%;
@@ -253,57 +271,210 @@ img {
 #nextBtn {
   right: 10px;
 }
-/* mesmo codigo do css da index */
-/* abaixo estão as configuraçoes do dropdown */
+/* --- FIM DO CARROSSEL --- */
 
-/* aqui vou selecinar o dropdown e colocar ele como container */
+/* --- ESTILOS DO DROPDOWN --- */
+/* (Estes estilos são para o desktop, mas serão ajustados no mobile) */
 .dropdown {
   position: relative;
 }
 
-/* manipulando o ul dentro do li .dropdown */
 .submenu {
   list-style: none;
   padding: var(--espaco_modular-xs) 0;
   margin: 0;
-
-  /* Esconde o submenu por padrão */
   display: none;
-
-  /* Posiciona o submenu absolutamente abaixo do item pai */
   position: absolute;
-  top: 100%; /* Começa logo abaixo do link pai */
+  top: 100%;
   left: 0;
-
-  /* Estilização (usando suas variáveis) */
   background-color: var(--cor-surface);
   border: 1px solid var(--cor-border);
   border-radius: var(--espaco_modular-xs);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  min-width: 220px; /* Largura mínima para o dropdown */
-  z-index: 100; /* Garante que fique acima de outros elementos */
+  min-width: 220px;
+  z-index: 100;
 }
 
-/* Mostra o submenu quando o mouse passa por cima do item <li> pai */
 .dropdown:hover .submenu {
   display: block;
 }
 
-/* Estilo dos links <a> dentro do submenu */
 .submenu li a {
   display: block;
   padding: var(--espaco_modular-s) var(--espaco_modular-m);
-
-  /* Sobrescreve os estilos de link padrão para algo mais sutil */
   color: var(--color-text-primary);
   font-weight: var(--font-weight-regular);
   text-decoration: none;
-  white-space: nowrap; /* Impede que o texto quebre em duas linhas */
+  white-space: nowrap;
 }
 
-/* Efeito hover para os links do submenu */
 .submenu li a:hover {
   background-color: var(--cor-background);
   color: var(--cor-primary);
   text-decoration: none;
+}
+
+/* --- NAVEGAÇÃO RESPONSIVA (MOBILE-FIRST) --- */
+
+header {
+  /* Garante que o botão fique posicionado relativo ao header */
+  position: relative;
+}
+
+.nav-toggle {
+  display: block; /* Visível por padrão (mobile) */
+  position: absolute;
+  /* Ajuste top/right com base no padding do seu header */
+  top: 2.2rem;
+  right: var(--espaco_modular-l);
+  width: 32px;
+  height: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1010; /* Acima do menu */
+  padding: 0;
+}
+
+.hamburger-line {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: var(--cor-secondary); /* Cor do título */
+  border-radius: 3px;
+  transition: all 0.3s ease-in-out;
+}
+
+.hamburger-line:nth-child(2) {
+  margin: 6px 0;
+}
+
+/* --- Estilos do Menu (Mobile) --- */
+nav {
+  /* Escondido fora da tela por padrão */
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 80%;
+  max-width: 300px;
+  height: 100vh;
+  background-color: var(--cor-surface);
+  border-left: 1px solid var(--cor-border);
+  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+  z-index: 1000;
+  /* Ajustar padding para o menu vertical */
+  padding: var(--espaco_modular-xxl) var(--espaco_modular-l);
+  visibility: hidden;
+}
+
+/* --- Estado Aberto (via JS) --- */
+nav.nav-open {
+  transform: translateX(0);
+  visibility: visible;
+}
+
+/* Animação do botão "X" */
+.nav-toggle.is-active .hamburger-line:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+.nav-toggle.is-active .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+.nav-toggle.is-active .hamburger-line:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+/* Trava o scroll da página quando o menu está aberto */
+body.nav-lock-scroll {
+  overflow: hidden;
+}
+
+/* --- Estilos da Lista (Mobile) --- */
+/* Esta é a regra principal para a lista do menu (mobile) */
+nav > ul {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaco_modular-s); /* Espaçamento menor no mobile */
+  width: 100%;
+  list-style: none; /* Garantindo que não haja marcadores */
+  padding: 0; /* Garantindo que não haja padding */
+  margin: 0; /* Garantindo que não haja margem */
+}
+
+/* Dropdown mobile (simplificado) */
+.dropdown .submenu {
+  display: block; /* Sempre visível no menu mobile */
+  position: static;
+  background: none;
+  border: none;
+  box-shadow: none;
+  min-width: unset;
+  padding: 0 0 0 var(--espaco_modular-s); /* Indentação */
+}
+
+.submenu li a {
+  padding: var(--espaco_modular-xs) 0;
+  color: var(--color-text-secondary); /* Cor mais suave */
+}
+.submenu li a:hover {
+  background: none;
+  color: var(--cor-primary);
+}
+
+/* --- BREAKPOINT: DISPOSITIVOS MAIORES (PÓS-MOBILE) --- */
+/* A partir de 480px, voltamos ao menu desktop */
+@media (min-width: 480px) {
+  .nav-toggle {
+    display: none; /* Esconde o hamburger */
+  }
+
+  /* Restaura o layout da <nav> */
+  nav {
+    position: static;
+    transform: none;
+    width: auto;
+    height: auto;
+    background: none;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    visibility: visible;
+  }
+
+  /* Restaura o layout flex do menu principal */
+  nav > ul {
+    display: flex;
+    flex-direction: row;
+    gap: var(--espaco_modular-m);
+    width: auto; /* Restaura a largura automática */
+  }
+
+  /*  Impede que os links principais quebrem *** */
+  nav > ul > li > a {
+    white-space: nowrap;
+  }
+
+  /* Restaura o layout do dropdown */
+  .dropdown .submenu {
+    display: none; /* Esconde novamente para o hover */
+    position: absolute; /* Devolve a posição */
+    background-color: var(--cor-surface);
+    border: 1px solid var(--cor-border);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    min-width: 220px;
+    padding: var(--espaco_modular-xs) 0;
+  }
+  .dropdown:hover .submenu {
+    display: block; /* Reativa o hover */
+  }
+  .submenu li a {
+    padding: var(--espaco_modular-s) var(--espaco_modular-m);
+    color: var(--color-text-primary);
+  }
+  .submenu li a:hover {
+    background-color: var(--cor-background);
+    color: var(--cor-primary);
+  }
 }

@@ -10,14 +10,23 @@
   <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/logo_32x32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/logo_180x180.png">
   <!-- não utilizar css nesse primeiro momento -->
-  <link rel="stylesheet" href="css/style_index.css">
-
+  <link rel="stylesheet" href="css/style_index.css?v=2">
+  <!-- css das bags -->
+  <link rel="stylesheet" href="css/feedback-components.css">
 </head>
 
 <body>
+
   <header>
     <h1>ONG - Comida para todos</h1>
-    <nav>
+    <!-- menu hamburguer -->
+    <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="main-nav">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
+
+    <nav id="main-nav">
       <ul>
         <li><a href="index.html">Página inicial</a></li>
         <!-- atendendo aos requisitos de dropdown -->
@@ -53,7 +62,6 @@
         <p>email: foodforall@foodforall.com</p>
       </address>
     </section>
-
   </main>
 
   <footer>
@@ -62,6 +70,8 @@
     <br>
   </footer>
 
+  <!-- menu hambuguer -->
+  <script src="js/navigation.js"></script>
 </body>
 
 </html>
