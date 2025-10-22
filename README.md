@@ -65,6 +65,9 @@ CSS3 (Grid, Flexbox, Variáveis Customizadas)
 
 JavaScript (interatividade e validações)
 
+Site funcionando: 
+[Acessar site](https://romarionc.github.io/Projeto_02/)
+
 🧾 Autor
 
 Desenvolvido por Romario Costa
