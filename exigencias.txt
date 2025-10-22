@@ -18,7 +18,7 @@ Implementar leiaute principal usando CSS grid para estrutura geral; ok
 
 Utilizar flexbox para componentes internos e alinhamentos; ok
 
-Criar no mínimo 5 breakpoints responsivos bem definidos;
+Criar no mínimo 5 breakpoints responsivos bem definidos; ok
 
 Desenvolver sistema de grid customizado (12 colunas);  ok
 
